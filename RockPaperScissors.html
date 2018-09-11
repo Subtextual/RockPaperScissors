@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors!</title>
+</head>
+<body>
+  <script>
+    function computerPlay() {
+        let x = Math.floor((Math.random() * 3));
+        return x
+        }
+    function playRound(computerSelection, playerSelection) {
+        switch(computerSelection-playerSelection){
+            case -1:
+            case 2:
+                return 1;
+            case 1:
+            case -2:
+                return -1;
+            case 0:
+                return 0;
+            default: 
+                return 100;
+        }
+    }
+    function playerSelection(){
+        result = window.prompt("what do you play?").toLowerCase();
+        switch(result){
+            case "rock":
+                return 2;
+            case "paper": 
+                return 1;
+            case "scissors": 
+                return 0;
+            default:
+                return playerSelection();
+        }
+    }
+    function game() {
+       let player = 0;
+       let comp = 0;
+       let result = 2;
+        for(i = 0; i < 5; i++) {   
+            humplay = playerSelection();
+            compplay = computerPlay();
+            result = playRound(compplay, humplay);
+            if(result === 1) {
+                    console.log("you win!");
+                    player++;
+                }
+            else if(result === 0) { 
+                    console.log("draw!");
+            }
+            else if (result === -1) { 
+                    console.log("you lose!");
+                    comp++;
+                                }
+            else {
+                    console.log("???");
+                }
+            }
+        if(player>comp){
+            console.log("you win! %d to %d", player, comp);
+        } else if (player===comp) {
+            console.log("draw! %d all", player);
+        } else {
+            console.log("you lose! %d to %d!", comp, player);
+            }
+        }
+  </script>
+</body>
+</html>
