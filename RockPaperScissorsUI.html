@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors!</title>
+</head>
+<body>
+    <p>Fight Me</p>
+    <div class = "container">
+        <button class="input" id="rock" onclick="playRound(2)">Rock</button>
+        <button class="input" id="paper" onclick="playRound(1)">Paper</button>
+        <button class="input" id="scissors" onclick="playRound(0)">Scissors</button>   
+    </div>
+    <div class = "container">
+        <div id="announce"></div><br>
+        <div class = "subcont">
+            <div class = "leftlabel">Human:</div>
+            <div class = "rightlabel" class = "right" id="playerscore"></div>
+        </div>
+        <div class = "subcont">
+            <div class = "leftlabel">Computer:</div>
+            <div class = "rightlabel" id="compscore"></div>
+        </div>
+    </div>
+<script src="myscripts.js"></script>
+</body>
+</html>
